@@ -1,8 +1,8 @@
-# AppleMusicClient
+# Apple Music Client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/apple_music_client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Apple Music Client is a ruby gem that allows Apple Developers to easily access the
+Apple Music API using ruby. Clients are available to retrieve information from
+the Apple Music storefront as well as interacting with user's library.
 
 ## Installation
 
@@ -19,10 +19,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install apple_music_client
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
