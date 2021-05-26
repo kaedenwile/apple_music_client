@@ -11,4 +11,6 @@ module AppleMusicClient
 
   autoload :Album, "apple_music_client/data/album"
   autoload :Artist, "apple_music_client/data/artist"
+  autoload :Artwork, "apple_music_client/data/artwork"
+  autoload :Resource, "apple_music_client/data/resource"
 end
