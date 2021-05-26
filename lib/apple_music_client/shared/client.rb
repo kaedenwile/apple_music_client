@@ -1,9 +1,11 @@
-require 'httparty'
+# frozen_string_literal: true
+
+require "httparty"
 
 module AppleMusicClient
-
+  # Generic client containing common code
+  # for talking to the Apple Music Api.
   class Client
-
     def initialize(token)
       @token = token
     end
@@ -11,7 +13,8 @@ module AppleMusicClient
     def get(resource)
       response = HTTParty.get(
         "https://api.music.apple.com#{resource}",
-        {headers: headers})
+        { headers: headers }
+      )
 
       if response.code == 200
         JSON.parse(response.body)
@@ -24,7 +27,7 @@ module AppleMusicClient
     def post(resource)
       HTTParty.post(
         "https://api.music.apple.com#{resource}",
-        {headers: headers}
+        { headers: headers }
       )
     end
 
@@ -33,7 +36,5 @@ module AppleMusicClient
         'Authorization': "Bearer #{@token}"
       }
     end
-
   end
-
 end

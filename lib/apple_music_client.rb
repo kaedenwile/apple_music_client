@@ -2,6 +2,8 @@
 
 require_relative "apple_music_client/version"
 
+# Clients for accessing the Apple Music Storefront
+# and user libraries.
 module AppleMusicClient
   class Error < StandardError; end
 

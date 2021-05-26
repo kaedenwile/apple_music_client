@@ -1,10 +1,10 @@
-module AppleMusicClient
+# frozen_string_literal: true
 
+module AppleMusicClient
   # Data class that initializes values with the contents
   # of a hash, as expected from Apple Music Api. Contents
   # are frozen at initialization.
   class Resource
-
     def initialize(args)
       args = args.merge(args["attributes"]) if args.key? "attributes"
 

@@ -5,9 +5,8 @@ require "apple_music_client/shared/paginated_response"
 require "apple_music_client/data/artist"
 
 module AppleMusicClient
-
+  # Client for accessing the Apple Music storefront
   class StoreClient < Client
-
     def find_artist(artist_name:)
       response = get_catalog("search?term=#{escape(artist_name)}&types=artists")
       parse(response.dig("results", "artists", "data"))[0]
@@ -37,16 +36,15 @@ module AppleMusicClient
       return [] if payload.nil?
 
       payload.map do |value|
-        if value["type"] == "artists"
+        case value["type"]
+        when "artists"
           Artist.new(value)
-        elsif value["type"] == "albums"
+        when "albums"
           Album.new(value)
         else
           puts "Unknown type:", value
         end
       end
     end
-
   end
-
 end
